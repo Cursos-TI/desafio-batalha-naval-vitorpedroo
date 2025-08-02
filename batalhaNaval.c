@@ -10,26 +10,26 @@ int main() {
     int tabuleiro[tamanhoTabuleiro][tamanhoTabuleiro] = {0};
 
     /// Coordenadas do navio
-    int linha_horizontal;  
-    int coluna_horizontal; 
+    int linha_horizontal = 0;  
+    int coluna_horizontal = 0; 
 
-    int linha_vertical; 
-    int coluna_vertical; 
+    int linha_vertical = 1; 
+    int coluna_vertical = 1; 
 
-    int linha_diagonal1;
-    int coluna_diagonal1;
+    int linha_diagonal1 = 0;
+    int coluna_diagonal1 = 6;
 
-    int linha_diagonal2;
-    int coluna_diagonal2;
+    int linha_diagonal2 = 2;
+    int coluna_diagonal2 = 4;
 
 
-    /// Amostra das coordenadas do tabuleiro
+    /*// Amostra das coordenadas do tabuleiro
    printf("Posicione os navios no tabuleiro:\n");
-    printf("   0 1 2 3 4 5 6 7 8 9\n");
+    printf("    0  1  2  3  4  5  6  7  8  9\n");
     for (int i = 0; i < 10; i++) {
         printf("%d| ", i);
         for (int j = 0; j < 10; j++) {
-            printf("0 ");
+            printf(" 0 ");
         }
         printf("\n");
     }
@@ -42,7 +42,7 @@ int main() {
     printf("Informe a linha e coluna do primeiro navio na diagonal (0 a 9): ");
     scanf("%d %d", &linha_diagonal1, &coluna_diagonal1);
     printf("Informe a linha e coluna do segundo navio na diagonal (0 a 9): ");
-    scanf("%d %d", &linha_diagonal2, &coluna_diagonal2);
+    scanf("%d %d", &linha_diagonal2, &coluna_diagonal2);*/
     
     
 
@@ -126,17 +126,23 @@ int main() {
         printf("Navio diagonal 2 fora dos limites.\n");
         return 1;
     }
-        
 
 
+///melhorando o visual do tabuleiro
+        printf("    ");
+    for (int coluna = 0; coluna < tamanhoTabuleiro; coluna++) {
+    printf("%2d ", coluna);
+}
+    printf("\n");
 
-    printf("Tabuleiro Batalha Naval (0 = água, 3 = navio):\n\n");
     for (int linha = 0; linha < tamanhoTabuleiro; linha++) {
+        printf("%2d| ", linha); 
         for (int coluna = 0; coluna < tamanhoTabuleiro; coluna++) {
-            printf("%d ", tabuleiro[linha][coluna]);
-        }
-        printf("\n");
+            printf("%2d ", tabuleiro[linha][coluna]); 
     }
+        printf("\n");
+}
+
 
     return 0;
 }
